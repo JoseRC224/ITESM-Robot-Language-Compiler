@@ -11,6 +11,7 @@
 "avanza" { return ADVANCE; }
 "muévete" { return MOVE; }
 "bloques" { return BLOCKS; }
+"bloque" { return BLOCKS; }
 "hacia adelante" { return FORWARD; }
 "hacia atrás" { return BACKWARD; }
 "hacia la izquierda" { return LEFT; }

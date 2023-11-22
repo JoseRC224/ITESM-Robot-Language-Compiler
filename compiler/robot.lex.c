@@ -352,8 +352,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 20
-#define YY_END_OF_BUFFER 21
+#define YY_NUM_RULES 21
+#define YY_END_OF_BUFFER 22
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -363,19 +363,19 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[119] =
     {   0,
-        0,    0,   21,   19,   18,   18,   17,   16,    1,   19,
-       19,   19,   19,   19,   19,   19,   19,   19,   19,   18,
+        0,    0,   22,   20,   19,   19,   18,   17,    1,   20,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   19,
         1,    0,    0,    0,    0,    0,    0,    0,    0,    0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,   14,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,   15,    0,    0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    2,    4,    0,    0,   15,    0,
-        0,    0,    0,    0,    6,   12,    0,    0,    0,    0,
-        0,   13,    0,    0,    0,    0,    5,    0,    0,    0,
-        0,   11,    3,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    2,    4,    7,    0,   16,    0,
+        0,    0,    0,    0,    6,   13,    0,    0,    0,    0,
+        0,   14,    0,    0,    0,    0,    5,    0,    0,    0,
+        0,   12,    3,    0,    0,    0,    0,    0,    0,    0,
 
-        0,    0,    8,    0,    0,    0,    0,    0,    7,    0,
-        0,    0,    0,   10,    0,    0,    9,    0
+        0,    0,    9,    0,    0,    0,    0,    0,    8,    0,
+        0,    0,    0,   11,    0,    0,   10,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -827,75 +827,80 @@ YY_RULE_SETUP
 case 7:
 YY_RULE_SETUP
 #line 14 "robot.l"
-{ return FORWARD; }
+{ return BLOCKS; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 15 "robot.l"
-{ return BACKWARD; }
+{ return FORWARD; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 16 "robot.l"
-{ return LEFT; }
+{ return BACKWARD; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 17 "robot.l"
-{ return RIGHT; }
+{ return LEFT; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 18 "robot.l"
-{ return LEFT; }
+{ return RIGHT; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 19 "robot.l"
-{ return RIGHT; }
+{ return LEFT; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 20 "robot.l"
-{ return AND_THEN; }
+{ return RIGHT; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 21 "robot.l"
-{ return TURN; }
+{ return AND_THEN; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 22 "robot.l"
-{ return DEGREES; }
+{ return TURN; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 23 "robot.l"
-{ return END_OF_COMMAND; }
+{ return DEGREES; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 25 "robot.l"
-; /* Ignora las comas */
+#line 24 "robot.l"
+{ return END_OF_COMMAND; }
 	YY_BREAK
 case 18:
-/* rule 18 can match eol */
 YY_RULE_SETUP
-#line 27 "robot.l"
-; /* Ignora espacios en blanco y saltos de línea */
+#line 26 "robot.l"
+; /* Ignora las comas */
 	YY_BREAK
 case 19:
+/* rule 19 can match eol */
 YY_RULE_SETUP
 #line 28 "robot.l"
-{ return yytext[0]; } /* Cualquier otro carácter */
+; /* Ignora espacios en blanco y saltos de línea */
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 30 "robot.l"
+#line 29 "robot.l"
+{ return yytext[0]; } /* Cualquier otro carácter */
+	YY_BREAK
+case 21:
+YY_RULE_SETUP
+#line 31 "robot.l"
 ECHO;
 	YY_BREAK
-#line 899 "robot.lex.c"
+#line 904 "robot.lex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1900,5 +1905,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 30 "robot.l"
+#line 31 "robot.l"
 

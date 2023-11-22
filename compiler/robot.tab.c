@@ -75,7 +75,9 @@ extern int yylex();
 extern char *yytext;
 void yyerror(const char *s);
 
-#line 79 "robot.tab.c"
+FILE *asm_file;  // Archivo para escribir las instrucciones
+
+#line 81 "robot.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -517,9 +519,9 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    20,    20,    21,    24,    25,    28,    29,    32,    33,
-      36,    37,    40,    41,    44,    45,    46,    47,    48,    51,
-      52
+       0,    22,    22,    23,    26,    27,    30,    31,    34,    35,
+      38,    39,    42,    43,    46,    47,    48,    49,    50,    53,
+      54
 };
 #endif
 
@@ -1094,43 +1096,43 @@ yyreduce:
   switch (yyn)
     {
   case 8: /* single_command: movement_command direction  */
-#line 32 "robot.y"
-                                           { printf("MOVIMIENTO, %d\n", (yyvsp[-1].ival)); }
-#line 1100 "robot.tab.c"
+#line 34 "robot.y"
+                                           { fprintf(asm_file, "MOV,%d\n", (yyvsp[-1].ival)); }
+#line 1102 "robot.tab.c"
     break;
 
   case 9: /* single_command: turn_command  */
-#line 33 "robot.y"
-                             { printf("GIRO, %d grados\n", (yyvsp[0].ival)); }
-#line 1106 "robot.tab.c"
+#line 35 "robot.y"
+                             { fprintf(asm_file, "TURN,%d\n", (yyvsp[0].ival)); }
+#line 1108 "robot.tab.c"
     break;
 
   case 12: /* movement_command: MOVE NUMBER BLOCKS  */
-#line 40 "robot.y"
+#line 42 "robot.y"
                                      { (yyval.ival) = (yyvsp[-1].ival); }
-#line 1112 "robot.tab.c"
+#line 1114 "robot.tab.c"
     break;
 
   case 13: /* movement_command: ADVANCE NUMBER BLOCKS  */
-#line 41 "robot.y"
+#line 43 "robot.y"
                                         { (yyval.ival) = (yyvsp[-1].ival); }
-#line 1118 "robot.tab.c"
+#line 1120 "robot.tab.c"
     break;
 
   case 19: /* turn_command: TURN NUMBER DEGREES  */
-#line 51 "robot.y"
+#line 53 "robot.y"
                                   { (yyval.ival) = (yyvsp[-1].ival); }
-#line 1124 "robot.tab.c"
+#line 1126 "robot.tab.c"
     break;
 
   case 20: /* turn_command: TURN NUMBER  */
-#line 52 "robot.y"
+#line 54 "robot.y"
                           { (yyval.ival) = (yyvsp[0].ival); }
-#line 1130 "robot.tab.c"
+#line 1132 "robot.tab.c"
     break;
 
 
-#line 1134 "robot.tab.c"
+#line 1136 "robot.tab.c"
 
       default: break;
     }
@@ -1323,7 +1325,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 55 "robot.y"
+#line 57 "robot.y"
 
 
 void yyerror(const char *s) {
@@ -1331,8 +1333,28 @@ void yyerror(const char *s) {
 }
 
 int main(void) {
-    do {
-        yyparse();
-    } while (!feof(stdin));
+    FILE *file = fopen("sentences.txt", "r");
+    if (file == NULL) {
+        perror("Error al abrir el archivo");
+        return 1;
+    } else {
+        printf("Archivo abierto correctamente.\n");
+    }
+
+    // Redirige la entrada de Lex a este archivo
+    extern FILE *yyin;
+    yyin = file;
+
+    asm_file = fopen("instructions.asm", "w");
+    if (asm_file == NULL) {
+        perror("Error al crear el archivo .asm");
+        fclose(file);
+        return 1;
+    }
+
+    yyparse();
+
+    fclose(file);
+    fclose(asm_file);
     return 0;
 }

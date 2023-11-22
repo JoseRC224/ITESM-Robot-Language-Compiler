@@ -1,0 +1,5 @@
+Robot, por favor avanza 3 bloques hacia adelante.
+Robot, por favor gira 90 grados.
+Robot, avanza 2 bloques.
+Robot, gira 180 grados y luego muévete 4 bloques hacia la derecha.
+Robot, muévete 5 bloques hacia la izquierda y luego gira 90 grados.
