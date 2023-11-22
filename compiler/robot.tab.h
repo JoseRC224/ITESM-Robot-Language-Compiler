@@ -67,9 +67,8 @@ extern int yydebug;
     AND_THEN = 268,                /* AND_THEN  */
     TURN = 269,                    /* TURN  */
     DEGREES = 270,                 /* DEGREES  */
-    THEN = 271,                    /* THEN  */
-    AND = 272,                     /* AND  */
-    END_OF_COMMAND = 273           /* END_OF_COMMAND  */
+    AND = 271,                     /* AND  */
+    END_OF_COMMAND = 272           /* END_OF_COMMAND  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -78,11 +77,11 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 10 "robot.y"
+#line 9 "robot.y"
 
     int ival; // Para números
 
-#line 86 "robot.tab.h"
+#line 85 "robot.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

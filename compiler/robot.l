@@ -20,9 +20,9 @@
 "y luego" { return AND_THEN; }
 "gira" { return TURN; }
 "grados" { return DEGREES; }
-", luego" { return THEN; }
-"y" { return AND; }
 "." { return END_OF_COMMAND; }
+
+"," ; /* Ignora las comas */
 
 [ \t\n]+ ; /* Ignora espacios en blanco y saltos de línea */
 . { return yytext[0]; } /* Cualquier otro carácter */

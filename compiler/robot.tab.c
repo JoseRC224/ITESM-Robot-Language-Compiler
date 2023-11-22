@@ -73,10 +73,9 @@
 #include <stdlib.h>
 extern int yylex();
 extern char *yytext;
-
 void yyerror(const char *s);
 
-#line 80 "robot.tab.c"
+#line 79 "robot.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -120,18 +119,17 @@ enum yysymbol_kind_t
   YYSYMBOL_AND_THEN = 13,                  /* AND_THEN  */
   YYSYMBOL_TURN = 14,                      /* TURN  */
   YYSYMBOL_DEGREES = 15,                   /* DEGREES  */
-  YYSYMBOL_THEN = 16,                      /* THEN  */
-  YYSYMBOL_AND = 17,                       /* AND  */
-  YYSYMBOL_END_OF_COMMAND = 18,            /* END_OF_COMMAND  */
-  YYSYMBOL_YYACCEPT = 19,                  /* $accept  */
-  YYSYMBOL_commands = 20,                  /* commands  */
-  YYSYMBOL_full_command = 21,              /* full_command  */
-  YYSYMBOL_command_sequence = 22,          /* command_sequence  */
-  YYSYMBOL_single_command = 23,            /* single_command  */
-  YYSYMBOL_command_option = 24,            /* command_option  */
-  YYSYMBOL_movement_command = 25,          /* movement_command  */
-  YYSYMBOL_direction = 26,                 /* direction  */
-  YYSYMBOL_turn_command = 27               /* turn_command  */
+  YYSYMBOL_AND = 16,                       /* AND  */
+  YYSYMBOL_END_OF_COMMAND = 17,            /* END_OF_COMMAND  */
+  YYSYMBOL_YYACCEPT = 18,                  /* $accept  */
+  YYSYMBOL_commands = 19,                  /* commands  */
+  YYSYMBOL_full_command = 20,              /* full_command  */
+  YYSYMBOL_command_sequence = 21,          /* command_sequence  */
+  YYSYMBOL_single_command = 22,            /* single_command  */
+  YYSYMBOL_command_option = 23,            /* command_option  */
+  YYSYMBOL_movement_command = 24,          /* movement_command  */
+  YYSYMBOL_direction = 25,                 /* direction  */
+  YYSYMBOL_turn_command = 26               /* turn_command  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -459,19 +457,19 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  2
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   18
+#define YYLAST   20
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  19
+#define YYNTOKENS  18
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  9
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  19
+#define YYNRULES  20
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  28
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   273
+#define YYMAXUTOK   272
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -512,15 +510,16 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18
+      15,    16,    17
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    21,    21,    22,    25,    28,    29,    32,    33,    37,
-      38,    41,    42,    45,    46,    47,    48,    49,    52,    53
+       0,    20,    20,    21,    24,    25,    28,    29,    32,    33,
+      36,    37,    40,    41,    44,    45,    46,    47,    48,    51,
+      52
 };
 #endif
 
@@ -538,7 +537,7 @@ static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "NUMBER", "ROBOT",
   "PLEASE", "ADVANCE", "MOVE", "BLOCKS", "FORWARD", "BACKWARD", "LEFT",
-  "RIGHT", "AND_THEN", "TURN", "DEGREES", "THEN", "AND", "END_OF_COMMAND",
+  "RIGHT", "AND_THEN", "TURN", "DEGREES", "AND", "END_OF_COMMAND",
   "$accept", "commands", "full_command", "command_sequence",
   "single_command", "command_option", "movement_command", "direction",
   "turn_command", YY_NULLPTR
@@ -551,7 +550,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-15)
+#define YYPACT_NINF (-13)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -565,9 +564,9 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-     -15,     2,   -15,    -2,   -14,   -15,    -6,   -15,     4,    10,
-      11,   -15,   -11,     0,   -15,     7,     8,     3,    -6,   -15,
-     -15,   -15,   -15,   -15,   -15,   -15,   -15,   -15
+     -13,     2,   -13,    -2,   -13,   -13,    -6,     1,     4,    10,
+     -12,     3,     0,   -13,     6,     7,     5,   -13,    -6,   -13,
+     -13,   -13,   -13,   -13,   -13,   -13,   -13,   -13
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -575,21 +574,21 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       3,     0,     1,    10,     0,     9,     0,     2,     0,     0,
-       0,     4,     5,    17,     8,     0,     0,    19,     0,    13,
-      14,    15,    16,     7,    12,    11,    18,     6
+       2,     0,     1,    10,     3,    11,     0,     0,     0,     0,
+       5,     6,    14,     9,     0,     0,    20,     4,     0,    15,
+      16,    17,    18,     8,    13,    12,    19,     7
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -15,   -15,   -15,    -1,   -15,   -15,   -15,   -15,   -15
+     -13,   -13,   -13,    -1,   -13,   -13,   -13,   -13,   -13
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     1,     4,    11,    12,     6,    13,    23,    14
+       0,     1,     4,    10,    11,     6,    12,    23,    13
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -597,37 +596,41 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       8,     9,     2,     5,     7,    18,     3,    15,    10,    19,
-      20,    21,    22,    16,    17,    24,    25,    27,    26
+       7,     8,     2,     5,    14,    17,     3,    15,     9,    19,
+      20,    21,    22,    16,    24,    25,    18,    27,     0,     0,
+      26
 };
 
 static const yytype_int8 yycheck[] =
 {
-       6,     7,     0,     5,    18,    16,     4,     3,    14,     9,
-      10,    11,    12,     3,     3,     8,     8,    18,    15
+       6,     7,     0,     5,     3,    17,     4,     3,    14,     9,
+      10,    11,    12,     3,     8,     8,    13,    18,    -1,    -1,
+      15
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,    20,     0,     4,    21,     5,    24,    18,     6,     7,
-      14,    22,    23,    25,    27,     3,     3,     3,    16,     9,
-      10,    11,    12,    26,     8,     8,    15,    22
+       0,    19,     0,     4,    20,     5,    23,     6,     7,    14,
+      21,    22,    24,    26,     3,     3,     3,    17,    13,     9,
+      10,    11,    12,    25,     8,     8,    15,    21
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    19,    20,    20,    21,    22,    22,    23,    23,    24,
-      24,    25,    25,    26,    26,    26,    26,    26,    27,    27
+       0,    18,    19,    19,    20,    20,    21,    21,    22,    22,
+      23,    23,    24,    24,    25,    25,    25,    25,    25,    26,
+      26
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     3,     0,     3,     1,     3,     2,     1,     1,
-       0,     3,     3,     1,     1,     1,     1,     0,     3,     2
+       0,     2,     0,     2,     4,     3,     1,     3,     2,     1,
+       0,     1,     3,     3,     0,     1,     1,     1,     1,     3,
+       2
 };
 
 
@@ -1090,44 +1093,44 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 7: /* single_command: movement_command direction  */
+  case 8: /* single_command: movement_command direction  */
 #line 32 "robot.y"
                                            { printf("MOVIMIENTO, %d\n", (yyvsp[-1].ival)); }
-#line 1097 "robot.tab.c"
+#line 1100 "robot.tab.c"
     break;
 
-  case 8: /* single_command: turn_command  */
+  case 9: /* single_command: turn_command  */
 #line 33 "robot.y"
                              { printf("GIRO, %d grados\n", (yyvsp[0].ival)); }
-#line 1103 "robot.tab.c"
+#line 1106 "robot.tab.c"
     break;
 
-  case 11: /* movement_command: MOVE NUMBER BLOCKS  */
-#line 41 "robot.y"
+  case 12: /* movement_command: MOVE NUMBER BLOCKS  */
+#line 40 "robot.y"
                                      { (yyval.ival) = (yyvsp[-1].ival); }
-#line 1109 "robot.tab.c"
+#line 1112 "robot.tab.c"
     break;
 
-  case 12: /* movement_command: ADVANCE NUMBER BLOCKS  */
-#line 42 "robot.y"
+  case 13: /* movement_command: ADVANCE NUMBER BLOCKS  */
+#line 41 "robot.y"
                                         { (yyval.ival) = (yyvsp[-1].ival); }
-#line 1115 "robot.tab.c"
+#line 1118 "robot.tab.c"
     break;
 
-  case 18: /* turn_command: TURN NUMBER DEGREES  */
-#line 52 "robot.y"
+  case 19: /* turn_command: TURN NUMBER DEGREES  */
+#line 51 "robot.y"
                                   { (yyval.ival) = (yyvsp[-1].ival); }
-#line 1121 "robot.tab.c"
+#line 1124 "robot.tab.c"
     break;
 
-  case 19: /* turn_command: TURN NUMBER  */
-#line 53 "robot.y"
+  case 20: /* turn_command: TURN NUMBER  */
+#line 52 "robot.y"
                           { (yyval.ival) = (yyvsp[0].ival); }
-#line 1127 "robot.tab.c"
+#line 1130 "robot.tab.c"
     break;
 
 
-#line 1131 "robot.tab.c"
+#line 1134 "robot.tab.c"
 
       default: break;
     }
@@ -1320,14 +1323,12 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 57 "robot.y"
-
+#line 55 "robot.y"
 
 
 void yyerror(const char *s) {
     fprintf(stderr, "Error: %s en '%s'\n", s, yytext);
 }
-
 
 int main(void) {
     do {
@@ -1335,5 +1336,3 @@ int main(void) {
     } while (!feof(stdin));
     return 0;
 }
-
-
